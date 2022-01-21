@@ -41,7 +41,7 @@ for i, elem in enumerate(wyraz):
                 a = 10*a + elem
             try:
                 if wyraz[i+1] in lista_znakow:
-                    wynik *= a
+                    wynik /= a
             except IndexError:
                 print("Nie wpisałeś znaku =")
         elif działanie == 4:
@@ -51,7 +51,7 @@ for i, elem in enumerate(wyraz):
                 a = 10*a + elem
             try:
                 if wyraz[i+1] in lista_znakow:
-                    wynik /= a
+                    wynik *= a
             except IndexError:
                 print("Nie wpisałeś znaku =")
 
@@ -62,10 +62,10 @@ for i, elem in enumerate(wyraz):
         if elem == "-":
             działanie = 2
             a=0
-        if elem == "*":
+        if elem == "/":
             działanie = 3
             a=0
-        if elem == "/":
+        if elem == "*":
             działanie = 4
             a=0
         if elem == "=":
