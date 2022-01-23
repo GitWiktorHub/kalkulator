@@ -29,13 +29,9 @@ for i, elem in enumerate(wyraz):
             a = elem
         elif a != 0:
             a = 10 * a + elem
-        plik = open("liczby", "a+")
-        a = str(a)
-        plik.write(a)
-        plik.write("\n")
-        plik.close()
-        a = int(a)
-        wynik = a
+
+        liczby.append(a)
+        
 
 
     else:
