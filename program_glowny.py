@@ -2,7 +2,7 @@ lista_liczb = ['1','2','3','4','5','6','7','8','9','0']
 lista_znakow = ["+","-","*","/"]
 wyraz = input("Podaj wyrażenie: ")
 a=0
-wynik = None
+wynik = 0
 znaki = []
 liczby = []
 
@@ -34,9 +34,13 @@ for i, elem in enumerate(wyraz):
             a = elem
         elif a != 0:
             a = 10 * a + elem
-        liczby.append(a)
     elif elem in lista_znakow:
-        pass
+        liczby.append(a)
+        a = 0
     else:
         print("Wystąpił bład")
         print("Prawdopodownie wpisałeś literę a nie liczbę")
+for i,znak in enumerate(znaki):
+    if znak == "+":
+        wynik += dodaj(liczby[i],liczby[i+1])
+print(wynik)
