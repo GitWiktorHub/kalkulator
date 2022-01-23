@@ -14,8 +14,10 @@ for i, elem in enumerate(wyraz):
             elif a != 0:
                 a = 10*a + elem
             plik = open("liczby","a+")
+            a = str(a)
             plik.write(a)
             plik.close()
+            a = int(a)
             wynik = a
         elif działanie == 1:
             if a == 0:
