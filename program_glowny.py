@@ -14,7 +14,7 @@ def pomnoz(a,b):
     return a*b
 def podziel(a,b):
     return a/b
-
+#Dwa for-y są złe ponieważ układa tylko znaki a nie liczby
 for znak in wyraz:
     if znak == "*" or znak == "/":
         znaki.append(znak)
@@ -42,5 +42,6 @@ for i, elem in enumerate(wyraz):
         print("Prawdopodownie wpisałeś literę a nie liczbę")
 for i,znak in enumerate(znaki):
     if znak == "+":
-        wynik += dodaj(liczby[i],liczby[i+1])
+        wynik += dodaj(liczby[i-1],liczby[i])
+        #mnoży dwa razy pierwszą liczbę zamiast dodać drugą
 print(wynik)
