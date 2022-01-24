@@ -15,7 +15,6 @@ for i, elem in enumerate(wyraz):
             a = elem
         elif a != 0:
             a = 10 * a + elem
-
     elif elem in lista_znakow:
         liczby.append(a)
         a = 0
@@ -25,12 +24,38 @@ for i, elem in enumerate(wyraz):
         print("Prawdopodownie wpisałeś literę a nie liczbę")
 
 for i,znak in enumerate(znaki):
-    if znak == "+":
+    if znak == "*":
         if wynik == None:
             wynik = 0
-            print(liczby)
-            wynik = liczby[i] + liczby[i+1]
-        if wynik != None:
-            wynik += liczby[i+1]
+            wynik = liczby[i] * liczby[i+1]
+        elif wynik != None:
+            wynik *= liczby[i+1]
+        znaki.remove("*")
+
+    if znak == "/":
+        if wynik == None:
+            wynik = 0
+            wynik = liczby[i] / liczby[i+1]
+        elif wynik != None:
+            wynik *= liczby[i+1]
+        znaki.remove("/")
+
+    if znak == "+":
+        if not "*" in znaki or not "/" in znaki:
+            if wynik == None:
+                wynik = 0
+                wynik = liczby[i] + liczby[i+1]
+            elif wynik != None:
+                wynik += liczby[i+1]
+        znaki.remove("+")
+
+    if znak == "-":
+        if not "*" in znaki or not "/" in znaki:
+            if wynik == None:
+                wynik = 0
+                wynik = liczby[i] - liczby[i+1]
+            elif wynik != None:
+                wynik -= liczby[i+1]
+        znaki.remove("-")
 
 print(wynik)
