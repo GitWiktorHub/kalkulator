@@ -3,19 +3,9 @@ lista_znakow = ["+","-","*","/","="]
 print("PAMIĘTAJ O ZNAKU =")
 wyraz = input("Podaj wyrażenie: ")
 a=0
-wynik = 0
+wynik = None
 znaki = []
 liczby = []
-
-def dodaj(a,b):
-    return a+b
-def odejmij(a,b):
-    return a-b
-def pomnoz(a,b):
-    return a*b
-def podziel(a,b):
-    return a/b
-
 
 for i, elem in enumerate(wyraz):
 
@@ -36,9 +26,11 @@ for i, elem in enumerate(wyraz):
 
 for i,znak in enumerate(znaki):
     if znak == "+":
-        if wynik == 0:
-
-            #wynik = liczby[i] + liczby[i+1]
-
+        if wynik == None:
+            wynik = 0
             print(liczby)
+            wynik = liczby[i] + liczby[i+1]
+        if wynik != None:
+            wynik += liczby[i+1]
+
 print(wynik)
