@@ -22,7 +22,7 @@ for i, elem in enumerate(wyraz):
     else:
         print("Wystąpił bład")
         print("Prawdopodownie wpisałeś literę a nie liczbę")
-
+print(znaki)
 for i,znak in enumerate(znaki):
     if znak == "*":
         if wynik == None:
@@ -32,7 +32,7 @@ for i,znak in enumerate(znaki):
             wynik *= liczby[i+1]
         znaki.remove("*")
 
-    if znak == "/":
+    elif znak == "/":
         if wynik == None:
             wynik = 0
             wynik = liczby[i] / liczby[i+1]
@@ -40,8 +40,10 @@ for i,znak in enumerate(znaki):
             wynik *= liczby[i+1]
         znaki.remove("/")
 
-    if znak == "+":
-        if not "*" in znaki or not "/" in znaki:
+    elif znak == "+":
+        if "*" in znaki or "/" in znaki:
+            pass
+        else:
             if wynik == None:
                 wynik = 0
                 wynik = liczby[i] + liczby[i+1]
@@ -49,13 +51,15 @@ for i,znak in enumerate(znaki):
                 wynik += liczby[i+1]
         znaki.remove("+")
 
-    if znak == "-":
-        if not "*" in znaki or not "/" in znaki:
+    elif znak == "-":
+        if "*" in znaki or "/" in znaki:
+            pass
+        else:
             if wynik == None:
                 wynik = 0
                 wynik = liczby[i] - liczby[i+1]
             elif wynik != None:
                 wynik -= liczby[i+1]
         znaki.remove("-")
-
+print(liczby)
 print(wynik)
