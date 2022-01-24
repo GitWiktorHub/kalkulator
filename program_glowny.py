@@ -1,5 +1,6 @@
 lista_liczb = ['1','2','3','4','5','6','7','8','9','0']
-lista_znakow = ["+","-","*","/"]
+lista_znakow = ["+","-","*","/","="]
+print("PAMIĘTAJ O ZNAKU =")
 wyraz = input("Podaj wyrażenie: ")
 a=0
 wynik = 0
@@ -20,14 +21,14 @@ for i, elem in enumerate(wyraz):
 
     if elem in lista_liczb:
         elem = int(elem)
-
         if a == 0:
             a = elem
         elif a != 0:
             a = 10 * a + elem
+
+    elif elem in lista_znakow:
         liczby.append(a)
         a = 0
-    elif elem in lista_znakow:
         znaki.append(elem)
     else:
         print("Wystąpił bład")
@@ -36,7 +37,8 @@ for i, elem in enumerate(wyraz):
 for i,znak in enumerate(znaki):
     if znak == "+":
         if wynik == 0:
-            wynik = liczby[i] + liczby[i+1]
 
+            #wynik = liczby[i] + liczby[i+1]
 
+            print(liczby)
 print(wynik)
