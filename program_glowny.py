@@ -25,18 +25,16 @@ for i, elem in enumerate(wyraz):
 print(znaki)
 for i,znak in enumerate(znaki):
     if znak == "*":
-        if wynik == None:
-            wynik = 0
+        if wynik is None:
             wynik = liczby[i] * liczby[i+1]
-        elif wynik != None:
+        elif wynik is not None:
             wynik *= liczby[i+1]
         znaki.remove("*")
 
     elif znak == "/":
-        if wynik == None:
-            wynik = 0
+        if wynik is None:
             wynik = liczby[i] / liczby[i+1]
-        elif wynik != None:
+        elif wynik is not None:
             wynik *= liczby[i+1]
         znaki.remove("/")
 
@@ -44,10 +42,9 @@ for i,znak in enumerate(znaki):
         if "*" in znaki or "/" in znaki:
             pass
         else:
-            if wynik == None:
-                wynik = 0
+            if wynik is None:
                 wynik = liczby[i] + liczby[i+1]
-            elif wynik != None:
+            elif wynik is not None:
                 wynik += liczby[i+1]
         znaki.remove("+")
 
@@ -55,10 +52,9 @@ for i,znak in enumerate(znaki):
         if "*" in znaki or "/" in znaki:
             pass
         else:
-            if wynik == None:
-                wynik = 0
+            if wynik is None:
                 wynik = liczby[i] - liczby[i+1]
-            elif wynik != None:
+            elif wynik is not None:
                 wynik -= liczby[i+1]
         znaki.remove("-")
 print(liczby)
