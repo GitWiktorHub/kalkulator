@@ -22,47 +22,41 @@ for i, elem in enumerate(wyraz):
     else:
         print("Wystąpił bład")
         print("Prawdopodownie wpisałeś literę a nie liczbę")
+
 print(znaki)
+print(liczby)
 for i,znak in enumerate(znaki):
     if znak == "*":
-        print(liczby)
         if wynik is None:
             wynik = liczby[i] * liczby[i+1]
+            liczby.pop(i)
+            liczby.pop(i)
         elif wynik is not None:
             wynik *= liczby[i+1]
+            liczby.pop(i)
         znaki.remove("*")
-        liczby.pop(i)
-        liczby.pop(i)
-        print(liczby)
 
     elif znak == "/":
         if wynik is None:
             wynik = liczby[i] / liczby[i+1]
+            liczby.pop(i)
+            liczby.pop(i)
         elif wynik is not None:
             wynik *= liczby[i+1]
+            liczby.pop(i)
         znaki.remove("/")
-        liczby.pop(i)
-        liczby.pop(i)
-        print(liczby)
 
 for i,znak in enumerate(znaki):
-    print(znaki)
     if znak == "+":
         if wynik is None:
             wynik = liczby[i] + liczby[i+1]
         elif wynik is not None:
             wynik += liczby[i]
-        znaki.remove("+")
-        liczby.pop(i)
-        print(liczby)
 
     elif znak == "-":
-        print(liczby)
         if wynik is None:
             wynik = liczby[i] - liczby[i+1]
         elif wynik is not None:
             wynik -= liczby[i]
-        znaki.remove("-")
-        liczby.pop(i)
-        print(liczby)
+
 print(wynik)
