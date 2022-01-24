@@ -15,26 +15,20 @@ def pomnoz(a,b):
 def podziel(a,b):
     return a/b
 
-for litera in wyraz:
-    if litera in lista_znakow:
-        znaki.append(litera)
-    else:
-        pass
-
 
 for i, elem in enumerate(wyraz):
 
     if elem in lista_liczb:
         elem = int(elem)
-        while elem in lista_liczb:
-            if a == 0:
-                a = elem
-            elif a != 0:
-                a = 10 * a + elem
+
+        if a == 0:
+            a = elem
+        elif a != 0:
+            a = 10 * a + elem
         liczby.append(a)
         a = 0
     elif elem in lista_znakow:
-        pass
+        znaki.append(elem)
     else:
         print("Wystąpił bład")
         print("Prawdopodownie wpisałeś literę a nie liczbę")
@@ -42,7 +36,7 @@ for i, elem in enumerate(wyraz):
 for i,znak in enumerate(znaki):
     if znak == "+":
         if wynik == 0:
-            wynik = dodaj(liczby[i - 1], liczby[i])
+            wynik = liczby[i] + liczby[i+1]
 
-        
+
 print(wynik)
