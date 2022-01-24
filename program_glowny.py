@@ -46,7 +46,7 @@ for i,znak in enumerate(znaki):
                 wynik = liczby[i] + liczby[i+1]
             elif wynik is not None:
                 wynik += liczby[i+1]
-        znaki.remove("+")
+            znaki.remove("+")
 
     elif znak == "-":
         if "*" in znaki or "/" in znaki:
@@ -56,6 +56,6 @@ for i,znak in enumerate(znaki):
                 wynik = liczby[i] - liczby[i+1]
             elif wynik is not None:
                 wynik -= liczby[i+1]
-        znaki.remove("-")
+            znaki.remove("-")
 print(liczby)
 print(wynik)
