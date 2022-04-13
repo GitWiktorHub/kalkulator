@@ -22,7 +22,7 @@ for i, elem in enumerate(wyraz):
     else:
         print("Wystąpił bład")
         print("Prawdopodownie wpisałeś literę a nie liczbę")
-if liczby[-1] != "=":
+if wyraz[-1] != "=":
     print("Program nie zadziałał, ponieważ NIE WPISAŁEŚ ZNAKU =")
 print(znaki)
 print(liczby)
