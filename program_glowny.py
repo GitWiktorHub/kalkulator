@@ -1,3 +1,6 @@
+from tkinter import *
+okno = Tk()
+
 lista_liczb = ['1','2','3','4','5','6','7','8','9','0']
 lista_znakow = ["+","-","*","/","="]
 print("PAMIĘTAJ O ZNAKU =")
@@ -22,6 +25,7 @@ for i, elem in enumerate(wyraz):
     else:
         print("Wystąpił bład")
         print("Prawdopodownie wpisałeś literę a nie liczbę")
+        break
 if wyraz[-1] != "=":
     print("Program nie zadziałał, ponieważ NIE WPISAŁEŚ ZNAKU =")
 print(znaki)
@@ -57,3 +61,4 @@ for i,znak in enumerate(znaki):
             wynik -= liczby[i]
 
 print("Wynik: ",wynik)
+okno.mainloop()
