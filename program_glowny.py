@@ -1,6 +1,7 @@
 from tkinter import *
 okno = Tk()
-
+pole = Entry()
+pole.grid(row=0,column=0,columnspan=4,rowspan=2)
 lista_liczb = ['1','2','3','4','5','6','7','8','9','0']
 lista_znakow = ["+","-","*","/","="]
 print("PAMIĘTAJ O ZNAKU =")
