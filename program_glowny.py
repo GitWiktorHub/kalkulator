@@ -30,22 +30,18 @@ for i,znak in enumerate(znaki):
     if znak == "*":
         if wynik is None:
             wynik = liczby[i] * liczby[i+1]
-            liczby.pop(i)
-            liczby.pop(i)
+
         elif wynik is not None:
             wynik *= liczby[i+1]
-            liczby.pop(i)
-        znaki.remove("*")
+
 
     elif znak == "/":
         if wynik is None:
             wynik = liczby[i] / liczby[i+1]
-            liczby.pop(i)
-            liczby.pop(i)
+
         elif wynik is not None:
-            wynik *= liczby[i+1]
-            liczby.pop(i)
-        znaki.remove("/")
+            wynik /= liczby[i+1]
+
 
 for i,znak in enumerate(znaki):
     if znak == "+":
@@ -60,4 +56,4 @@ for i,znak in enumerate(znaki):
         elif wynik is not None:
             wynik -= liczby[i]
 
-print(wynik)
+print("Wynik: ",wynik)
