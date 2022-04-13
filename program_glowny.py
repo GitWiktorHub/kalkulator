@@ -31,14 +31,14 @@ if wyraz[-1] != "=":
 print(znaki)
 print(liczby)
 for i,znak in enumerate(znaki):
+    #Mnożenie
     if znak == "*":
         if wynik is None:
             wynik = liczby[i] * liczby[i+1]
 
         elif wynik is not None:
             wynik *= liczby[i+1]
-
-
+    #Dzielenie
     elif znak == "/":
         if wynik is None:
             wynik = liczby[i] / liczby[i+1]
@@ -46,14 +46,14 @@ for i,znak in enumerate(znaki):
         elif wynik is not None:
             wynik /= liczby[i+1]
 
-
 for i,znak in enumerate(znaki):
+    #Dodawanie
     if znak == "+":
         if wynik is None:
             wynik = liczby[i] + liczby[i+1]
         elif wynik is not None:
             wynik += liczby[i]
-
+    #Odejmowanie
     elif znak == "-":
         if wynik is None:
             wynik = liczby[i] - liczby[i+1]
